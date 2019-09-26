@@ -20,5 +20,10 @@ create(@Body() createitemDto : CreateItemDto): string{
 
 }
 
+@Delete(':id')
+delete(@Param('id') id : string){
+    return `item ${id} deleted`
+}
+
 
 }
