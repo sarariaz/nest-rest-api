@@ -1,5 +1,6 @@
 import { Controller, Get , Post, Put, Delete, Body, Param} from '@nestjs/common';
 import { CreateItemDto} from './dto/create-item.dto';
+import { publicDecrypt } from 'crypto';
 
 @Controller('items')
 export class ItemsController {
@@ -23,6 +24,11 @@ create(@Body() createitemDto : CreateItemDto): string{
 @Delete(':id')
 delete(@Param('id') id : string){
     return `item ${id} deleted`
+}
+
+@Put(':id')
+update(@Body() updateitemDto : CreateItemDto, @Param('id') id): string{
+return `id: ${id}, name: ${updateitemDto.name}`
 }
 
 
