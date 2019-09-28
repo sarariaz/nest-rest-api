@@ -10,7 +10,7 @@ import config from './config/keys';
 
 
 @Module({
-  imports: [ ItemsModule , MongooseModule.forRoot(config.mongoURI)],
+  imports: [ ItemsModule , MongooseModule.forRoot('mongodb://localhost/nest')],
   controllers: [AppController],
   providers: [  AppService ]
 })
